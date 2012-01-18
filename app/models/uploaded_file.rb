@@ -62,7 +62,6 @@ class UploadedFile < ActiveRecord::Base
   
 	helper = Object.new.extend(ActionView::Helpers::NumberHelper)
 	numero = helper.number_to_human_size(file_size.to_i,:precision => 2, :separator => ',')
-	puts numero
 	self.update_attribute("file_size", numero)
 	
   end
